@@ -1,0 +1,88 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "sway/workspaces",
+    "sway/scratchpad",
+    "sway/mode",
+    "sway/window"
+  ],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "idle_inhibitor",
+    "pulseaudio",
+    "backlight",
+    "network",
+    "cpu",
+    "memory",
+    "tray",
+    "battery"
+  ],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}"
+  },
+
+  "tray": {
+    "spacing": 10
+  },
+
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span> "
+  },
+
+  "sway/scratchpad": {
+    "format": "{icon} {count} ",
+    "show-empty": false,
+    "format-icons": ["", " "],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}"
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+
+  "clock": {
+    "format": "{:%a %b %d  %I:%M %p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": " {volume}%",
+    "tooltip": false,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+
+  "network": {
+    "format-wifi": " {signalStrength}%",
+    "format-ethernet": "",
+    "format-disconnected": "",
+    "tooltip": false
+  },
+
+  "battery": {
+    "format": " {capacity}%",
+    "format-charging": " {capacity}%",
+    "tooltip": false
+  },
+
+  "backlight": {
+    "format": "󰃟 {percent}%"
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": ":{percentage}%"
+  }
+}
