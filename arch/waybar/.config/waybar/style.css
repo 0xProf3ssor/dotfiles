@@ -1,0 +1,132 @@
+/* ────────────── GLOBAL ────────────── */
+* {
+    font-family: "JetBrains Nerd Font", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    color: #cdd6f4;       /* Catppuccin foreground */
+}
+
+window#waybar {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ────────────── WORKSPACES ────────────── */
+#workspaces{
+  margin-right: 4px;
+}
+#workspaces button {
+    padding: 0 2px;          /* compact */
+    margin: 0 1px;
+    border-radius: 0;        /* no radius */
+    background: #313244;     /* Catppuccin surface */
+    color: #a6adc8;          /* subtext color */
+    border: none;
+    min-width: 16px;
+    min-height: 0;
+}
+
+#workspaces button.focused {
+    background: #89b4fa;     /* Catppuccin blue */
+    color: #1e1e2e;          /* base */
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background: #f38ba8;     /* Catppuccin red */
+    color: #1e1e2e;
+}
+
+#workspaces button:hover {
+    background: #313244;     /* remove hover shadow */
+}
+
+/* ────────────── SWAY SCRATCHPAD ────────────── */
+#sway-scratchpad {
+    color: #cdd6f4;
+    padding: 0 2px;          /* compact */
+    margin: 0 1px;
+    border-radius: 0;        /* no radius */
+    background: #313244;     /* Catppuccin surface */
+}
+
+/* ────────────── SWAY MODE ────────────── */
+#sway-mode {
+    background: transparent;
+    padding: 0 4px;
+    margin: 0 2px;
+    color: #f5c2e7;   /* Catppuccin pink for mode highlight */
+    font-style: italic;
+}
+
+/* ────────────── IDLE INHIBITOR ────────────── */
+#idle_inhibitor {
+    background: transparent;
+    padding: 0 4px;
+    margin: 0 2px;
+    color: #cdd6f4;
+}
+
+/* ────────────── CLOCK ────────────── */
+#clock {
+    background: transparent;
+    padding: 0 4px;
+    margin: 0 2px;
+    color: #cdd6f4;
+}
+
+/* ────────────── AUDIO, BACKLIGHT, NETWORK, BATTERY ────────────── */
+#pulseaudio,
+#backlight,
+#network,
+#battery {
+    background: transparent;
+    padding: 0 4px;
+    margin: 0 2px;
+    color: #cdd6f4;
+}
+#pulseaudio {
+    background: transparent;
+    padding: 0 4px;
+    margin: 0 2px;
+    color: #cdd6f4;   /* normal volume color */
+}
+
+/* Muted state */
+#pulseaudio.muted {
+    color: #f38ba8;   /* Catppuccin red */
+}
+
+
+#battery.charging {
+    color: #a6e3a1;  /* Catppuccin green */
+}
+
+/* ────────────── CPU & MEMORY ────────────── */
+#cpu,
+#memory {
+    background: transparent;
+    padding: 0 4px;
+    margin: 0 2px;
+    color: #cdd6f4;
+}
+
+/* ────────────── TRAY ────────────── */
+#tray {
+    background: transparent;
+    padding: 0 4px;
+    margin: 0 2px;
+}
+
+/* ────────────── GENERAL MODULES (hover/tooltip fix) ────────────── */
+.tooltip {
+    background: #1e1e2e;       /* Catppuccin base */
+    border: 1px solid #45475a;
+    padding: 6px;
+    color: #cdd6f4;
+    font-size: 12px;
+}
