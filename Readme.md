@@ -39,6 +39,7 @@ dotfiles/
 
 **Common Dependencies:**
 - Git
+- GNU Stow (for symlink management)
 - Neovim (>= 0.9.0)
 - Tmux
 - Zsh
@@ -46,12 +47,12 @@ dotfiles/
 
 **Arch Linux:**
 ```bash
-sudo pacman -S git neovim tmux zsh nodejs npm sway waybar wofi foot btop
+sudo pacman -S git stow neovim tmux zsh nodejs npm sway waybar wofi foot btop
 ```
 
 **macOS:**
 ```bash
-brew install git neovim tmux zsh node
+brew install git stow neovim tmux zsh node
 ```
 
 ### Setup Steps
@@ -68,46 +69,52 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-3. **Symlink configurations:**
+3. **Install configuration packages using GNU Stow:**
 
 **For Arch Linux:**
 ```bash
-# Create config directories if they don't exist
-mkdir -p ~/.config
+# Change to dotfiles directory
+cd ~/dotfiles
 
-# Symlink common configs
-ln -sf ~/dotfiles/common/nvim/.config/nvim ~/.config/
-ln -sf ~/dotfiles/common/tmux/.config/tmux ~/.config/
-ln -sf ~/dotfiles/common/tmux/.tmux.conf ~/.tmux.conf
-ln -sf ~/dotfiles/common/alacritty/.config/alacritty ~/.config/
-ln -sf ~/dotfiles/common/btop/.config/btop ~/.config/
-ln -sf ~/dotfiles/common/foot/.config/foot ~/.config/
+# Install common packages (shared across platforms)
+stow -t ~ common/nvim
+stow -t ~ common/tmux  
+stow -t ~ common/alacritty
+stow -t ~ common/btop
+stow -t ~ common/foot
 
-# Symlink Arch-specific configs
-ln -sf ~/dotfiles/arch/sway/.config/sway ~/.config/
-ln -sf ~/dotfiles/arch/waybar/.config/waybar ~/.config/
-ln -sf ~/dotfiles/arch/wofi/.config/wofi ~/.config/
-ln -sf ~/dotfiles/arch/swaylock/.config/swaylock ~/.config/
-ln -sf ~/dotfiles/arch/swaync/.config/swaync ~/.config/
-
-# Zsh config
-ln -sf ~/dotfiles/arch/zsh/.zshrc ~/.zshrc
+# Install Arch-specific packages
+stow -t ~ arch/sway
+stow -t ~ arch/waybar
+stow -t ~ arch/wofi
+stow -t ~ arch/swaylock
+stow -t ~ arch/swaync
+stow -t ~ arch/zsh
 ```
 
 **For macOS:**
 ```bash
-# Create config directories if they don't exist
-mkdir -p ~/.config
+# Change to dotfiles directory
+cd ~/dotfiles
 
-# Symlink common configs
-ln -sf ~/dotfiles/common/nvim/.config/nvim ~/.config/
-ln -sf ~/dotfiles/common/tmux/.config/tmux ~/.config/
-ln -sf ~/dotfiles/common/tmux/.tmux.conf ~/.tmux.conf
-ln -sf ~/dotfiles/common/alacritty/.config/alacritty ~/.config/
-ln -sf ~/dotfiles/common/btop/.config/btop ~/.config/
+# Install common packages (shared across platforms)
+stow -t ~ common/nvim
+stow -t ~ common/tmux
+stow -t ~ common/alacritty
+stow -t ~ common/btop
 
-# Zsh config
-ln -sf ~/dotfiles/mac/zsh/.zshrc ~/.zshrc
+# Install macOS-specific packages
+stow -t ~ mac/zsh
+```
+
+**Alternative: Install all common packages at once:**
+```bash
+cd ~/dotfiles
+# For Arch Linux
+stow -t ~ common/* arch/*
+
+# For macOS  
+stow -t ~ common/nvim common/tmux common/alacritty common/btop mac/*
 ```
 
 4. **Install Yazi file manager:**
@@ -150,6 +157,7 @@ nvim
 ## Dependencies
 
 ### Core Tools
+- [GNU Stow](https://www.gnu.org/software/stow/) - Symlink farm manager for dotfiles
 - [NvChad](https://nvchad.com/) - Neovim configuration framework
 - [Lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager
 - [Oh My Zsh](https://ohmyz.sh/) - Zsh configuration framework
@@ -203,6 +211,28 @@ nvim  # Plugins will reinstall automatically
 
 **Path conflicts between platforms:**
 The repository separates platform-specific zsh configs to avoid NVM and PATH conflicts between Arch Linux and macOS.
+
+**GNU Stow conflicts:**
+```bash
+# If stow reports conflicts with existing files, remove them first
+rm ~/.zshrc ~/.tmux.conf
+rm -rf ~/.config/nvim ~/.config/tmux
+
+# Then re-run stow commands
+cd ~/dotfiles
+stow -t ~ common/nvim common/tmux arch/zsh  # or mac/zsh for macOS
+```
+
+**Unstowing packages:**
+```bash
+# To remove symlinks created by stow
+cd ~/dotfiles
+stow -D -t ~ common/nvim  # Remove nvim package
+stow -D -t ~ arch/zsh     # Remove zsh package
+
+# To restow (useful after config changes)
+stow -R -t ~ common/nvim  # Remove and reinstall nvim package
+```
 
 **Permission issues:**
 ```bash
