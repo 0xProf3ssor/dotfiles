@@ -140,11 +140,11 @@ nvim
 
 ## Key Bindings
 
-### Tmux (Prefix: Ctrl-s)
-- `Ctrl-s + r` - Reload tmux config
-- `Ctrl-s + h/j/k/l` - Navigate between panes (vi-style)
-- `Ctrl-s + H/J/K/L` - Resize panes
-- `Ctrl-s + Ctrl-k/j` - Swap panes up/down
+### Tmux (Prefix: Ctrl-b)
+- `Ctrl-b + r` - Reload tmux config
+- `Ctrl-b + h/j/k/l` - Navigate between panes (vi-style)
+- `Ctrl-b + H/J/K/L` - Resize panes
+- `Ctrl-b + Ctrl-k/j` - Swap panes up/down
 
 ### Neovim
 - `Space` - Leader key
