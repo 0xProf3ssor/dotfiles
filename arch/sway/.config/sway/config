@@ -74,6 +74,30 @@ bindsym $mod+Shift+n exec swaync-client -t -sw     # toggle center
 bindsym $mod+Shift+d exec swaync-client -d -sw            # toggle Do Not Disturb
 bindsym $mod+c exec swaync-client -C                # clear all
 
+# OSD server
+exec swayosd-server
+
+# Sink volume toggle mute
+bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
+# Source volume toggle mute
+bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
+
+# Sink volume raise with custom value optionally with --device
+bindsym XF86AudioRaiseVolume exec  swayosd-client --output-volume +5 --max-volume 100
+# Sink volume lower with custom value optionally with --device
+bindsym XF86AudioLowerVolume exec  swayosd-client --output-volume -5 --max-volume 100
+
+# Capslock (If you don't want to use the backend)
+bindsym --release Caps_Lock exec swayosd-client --caps-lock
+
+# Brightness raise with custom value('+' sign needed)
+bindsym XF86MonBrightnessUp  exec swayosd-client --brightness +5
+# Brightness lower with custom value('-' sign needed)
+bindsym XF86MonBrightnessDown exec swayosd-client --brightness -5
+
+# Play/Pause current player
+bindsym XF86AudioPlay exec swayosd-client --playerctl play-pause
+
 
 ### Input configuration
 #
