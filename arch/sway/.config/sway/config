@@ -77,6 +77,10 @@ bindsym $mod+c exec swaync-client -C                # clear all
 # OSD server
 exec swayosd-server
 
+# External Drive Auto mount
+exec --no-startup-id udiskie -a -s
+
+
 # Sink volume toggle mute
 bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
 # Source volume toggle mute
