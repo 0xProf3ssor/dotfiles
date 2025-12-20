@@ -87,6 +87,10 @@ exec --no-startup-id udiskie -a -s
 bindsym $mod+n exec $term -a nmtui -e nmtui
 for_window [app_id="nmtui"] floating enable, move position center
 
+# Open pulsemixer audio device manager
+bindsym $mod+p exec $term -a pulsemixer -e pulsemixer
+for_window [app_id="pulsemixer"] floating enable, move position center
+
 # Bluetui floating TUI for bluetooth management
 bindsym $mod+Shift+b exec $term -a bluetui -e bluetui
 for_window [app_id="bluetui"] floating enable, move position center
