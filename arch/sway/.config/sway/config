@@ -44,6 +44,9 @@ set $term foot
 # Your preferred application launcher
 set $menu wmenu-run
 
+# Web browser
+set $browser brave
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -81,11 +84,11 @@ exec swayosd-server
 exec --no-startup-id udiskie -a -s
 
 # Open Network Manager TUI
-bindsym $mod+n exec foot -a nmtui -e nmtui
+bindsym $mod+n exec $term -a nmtui -e nmtui
 for_window [app_id="nmtui"] floating enable, move position center
 
 # Bluetui floating TUI for bluetooth management
-bindsym $mod+Shift+b exec foot -a bluetui -e bluetui
+bindsym $mod+Shift+b exec $term -a bluetui -e bluetui
 for_window [app_id="bluetui"] floating enable, move position center
 
 # Sink volume toggle mute
@@ -268,6 +271,20 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+# Quick App Launcher Mode
+mode "quick app launcher" {
+  bindsym b exec $browser;mode "default"
+  bindsym t exec Telegram;mode "default"
+  bindsym d exec discord;mode "default"
+  bindsym p exec $term tmux attach-session;mode "default"
+
+  # Return to default mode
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+Shift+a mode "quick app launcher"
+
 #
 # Utilities:
 #
