@@ -279,8 +279,14 @@ bindsym $mod+r mode "resize"
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # bindsym Print exec grim
+    # Fullscreen screenshot: Shift+Print
+    bindsym Shift+Print exec sh -c 'FILE=~/Pictures/screenshot-$(date +%F-%T).png; grim "$FILE"; wl-copy < "$FILE"'
+    
+    # Selected area screenshot: Print
+    bindsym Print exec sh -c 'FILE=~/Pictures/screenshot-$(date +%F-%T).png; grim -g "$(slurp)" "$FILE"; wl-copy < "$FILE"'
 
 #
 # Status Bar:
