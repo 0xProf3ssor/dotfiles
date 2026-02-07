@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 
-# make sure it's executable with:
-# chmod +x ~/.config/sketchybar/plugins/aerospace.sh
+# AeroSpace Workspace Plugin with Catppuccin Mocha Theme
+# Clean text-only workspace indicators - no backgrounds or borders
+
+# Source color definitions
+source "$CONFIG_DIR/colors.sh"
 
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-    sketchybar --set $NAME background.drawing=on
+    # Active workspace: bright mauve text with bold font
+    sketchybar --set $NAME \
+        label.color="$MAUVE" \
+        label.font="Hack Nerd Font:Bold:13.0"
 else
-    sketchybar --set $NAME background.drawing=off
+    # Inactive workspace: dimmed text with medium font
+    sketchybar --set $NAME \
+        label.color="$SUBTEXT1" \
+        label.font="Hack Nerd Font:Medium:12.0"
 fi

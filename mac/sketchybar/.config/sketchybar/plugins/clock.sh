@@ -1,8 +1,18 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# The $NAME variable is passed from sketchybar and holds the name of
-# the item invoking this script:
-# https://felixkratz.github.io/SketchyBar/config/events#events-and-scripting
+# Clock Plugin with Catppuccin Mocha Theme
+# Beautiful clock display with blue accent and calendar icon
 
-sketchybar --set "$NAME" label="$(date '+%d/%m %H:%M')"
+# Source color definitions
+source "$CONFIG_DIR/colors.sh"
+
+# Get current date and time with better formatting
+DATETIME=$(date '+%a %d/%m  %H:%M')
+
+# Update the clock with Catppuccin theming and calendar icon
+sketchybar --set "$NAME" \
+    icon="􀧞" \
+    label="$DATETIME" \
+    label.color="$TEXT" \
+    icon.color="$BLUE"
 
