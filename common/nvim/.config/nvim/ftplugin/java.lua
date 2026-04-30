@@ -46,8 +46,8 @@ local config = {
       configuration = {
         runtimes = {
           {
-            name = "JavaSE-17",
-            path = os.getenv("JAVA_HOME") or "/usr/lib/jvm/java-17-openjdk",
+          name = "JavaSE-26",
+             path = os.getenv("JAVA_HOME") or "/usr/lib/jvm/default",
             default = true,
           },
         },
