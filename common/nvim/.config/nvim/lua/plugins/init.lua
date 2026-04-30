@@ -23,6 +23,8 @@ return {
         "javascript",
         "typescript",
         "python",
+        "java",
+        "kotlin",
       },
     },
   },

@@ -6,6 +6,7 @@ local options = {
     html = { "prettier" },
     javascript = { "prettier" },
     typescript = { "prettier" },
+    java = { "google-java-format" },
   },
 
   -- format_on_save = {
