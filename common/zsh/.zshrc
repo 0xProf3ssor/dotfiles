@@ -126,6 +126,7 @@ function y() {
 
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
+export PATH="/home/prof3ssor/.local/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [[ -s "/usr/share/nvm/init-nvm.sh" ]] && \. "/usr/share/nvm/init-nvm.sh"
 
