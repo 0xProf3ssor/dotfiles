@@ -40,7 +40,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term kitty
 # Your preferred application launcher
 set $menu wofi --conf /home/prof3ssor/.config/wofi/config --style /home/prof3ssor/.config/wofi/style.css
 
@@ -84,15 +84,15 @@ exec_always killall swayosd-server; swayosd-server --style ~/.config/swayosd/sty
 exec --no-startup-id udiskie -a -s
 
 # Open Network Manager TUI
-bindsym $mod+Ctrl+n exec $term -a nmtui -W 80x24 -e ~/.local/bin/nmtui
+bindsym $mod+Ctrl+n exec $term --class nmtui ~/.local/bin/nmtui
 for_window [app_id="nmtui"] floating enable, move position center
 
 # Open pulsemixer audio device manager
-bindsym $mod+Ctrl+p exec $term -a pulsemixer -e pulsemixer
+bindsym $mod+Ctrl+p exec $term --class pulsemixer pulsemixer
 for_window [app_id="pulsemixer"] floating enable, move position center
 
 # Bluetui floating TUI for bluetooth management
-bindsym $mod+Ctrl+b exec $term -a bluetui -e bluetui
+bindsym $mod+Ctrl+b exec $term --class bluetui bluetui
 for_window [app_id="bluetui"] floating enable, move position center
 
 # Sink volume toggle mute
@@ -144,7 +144,7 @@ input type:touchpad {
     # File Manager (Thunar)
     bindsym $mod+Shift+f exec thunar
     # Terminal File Manager (Yazi)
-    bindsym $mod+y exec $term -e yazi
+    bindsym $mod+y exec $term yazi
 
     # Kill focused window
     bindsym $mod+Shift+q kill
