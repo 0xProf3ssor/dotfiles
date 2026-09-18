@@ -19,7 +19,7 @@ handle_action() {
         "  Wi-Fi") exec ~/.local/bin/networkmanager_dmenu ;;
         " Bluetooth") exec ~/.local/bin/wofi-bluetooth ;;
         
-        "  Volume Mixer") exec kitty --class pulsemixer -o remember_window_size=no -o initial_window_width=100c -o initial_window_height=30c pulsemixer ;;
+        "  Volume Mixer") exec kitty --class pulsemixer -o remember_window_size=no -o initial_window_width=80c -o initial_window_height=24c pulsemixer ;;
         "  Play/Pause") exec playerctl play-pause ;;
         "󰒭  Next Track") exec playerctl next ;;
         "󰒮  Previous Track") exec playerctl previous ;;
