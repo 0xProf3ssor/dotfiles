@@ -1,13 +1,13 @@
 # 0xProf3ssor's Dotfiles
 
-A terminal-focused development environment featuring the beautiful Catppuccin Mocha theme across all applications. This configuration provides a cohesive, productive workspace optimized for both Arch Linux and macOS.
+A terminal-focused development environment featuring the beautiful Gruvbox Dark theme across all applications. This configuration provides a cohesive, productive workspace optimized for both Arch Linux and macOS.
 
 ## Features
 
 - **Neovim**: Full IDE experience with NvChad v2.5, LSP support (Lua, TypeScript, Python, HTML, CSS), code formatting via Conform
-- **Tmux**: Session management with Catppuccin theming, vi-mode keybindings, and intuitive navigation
+- **Tmux**: Session management with Gruvbox theming, vi-mode keybindings, and intuitive navigation
 - **Zsh**: Enhanced shell experience with Powerlevel10k prompt and Yazi file manager integration  
-- **Unified Theme**: Catppuccin Mocha color scheme across nvim, tmux, btop, and window managers
+- **Unified Theme**: Gruvbox Dark color scheme across nvim, tmux, btop, and window managers
 - **Platform Support**: Optimized configurations for both Arch Linux (Sway ecosystem) and macOS
 - **Terminal Applications**: btop system monitor, foot/alacritty terminal emulators, Yazi file manager
 
@@ -17,13 +17,13 @@ A terminal-focused development environment featuring the beautiful Catppuccin Mo
 dotfiles/
 ├── common/          # Shared configurations for all platforms
 │   ├── nvim/        # Neovim config with NvChad, LSP, and custom plugins
-│   ├── tmux/        # Tmux config with Catppuccin theme and vi-mode
+│   ├── tmux/        # Tmux config with Gruvbox theme and vi-mode
 │   ├── zsh/         # Zsh config with Oh My Zsh and Powerlevel10k
 │   ├── alacritty/   # Cross-platform terminal emulator config
-│   ├── btop/        # System monitor with Catppuccin theme
+│   ├── btop/        # System monitor with Gruvbox theme
 │   └── foot/        # Wayland terminal config
 ├── arch/            # Arch Linux specific configurations
-│   ├── sway/        # Sway window manager with Catppuccin
+│   ├── sway/        # Sway window manager with Gruvbox
 │   ├── waybar/      # Status bar configuration
 │   ├── wofi/        # Application launcher
 │   ├── swaylock/    # Screen locker
@@ -162,7 +162,7 @@ nvim
 - [Lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager
 - [Oh My Zsh](https://ohmyz.sh/) - Zsh configuration framework
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - Zsh theme
-- [Catppuccin](https://github.com/catppuccin/catppuccin) - Color scheme
+- [Gruvbox](https://github.com/gruvbox/gruvbox) - Color scheme
 
 ### LSP Servers (auto-installed)
 - lua_ls (Lua)
@@ -179,10 +179,10 @@ nvim
 ## Customization
 
 ### Changing Themes
-The setup uses Catppuccin Mocha by default. To change themes:
+The setup uses Gruvbox Dark by default. To change themes:
 
 1. **Neovim**: Edit `common/nvim/.config/nvim/lua/chadrc.lua` and change the `theme` value
-2. **Tmux**: Update `@catppuccin_flavor` in `common/tmux/.tmux.conf`
+2. **Tmux**: Update `@gruvbox_flavor` in `common/tmux/.tmux.conf`
 3. **btop**: Change `color_theme` in `common/btop/.config/btop/btop.conf`
 
 ### Adding Neovim Plugins

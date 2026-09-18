@@ -1,0 +1,189 @@
+/* ────────────── GLOBAL ────────────── */
+* {
+    font-family: "JetBrains Nerd Font", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    color: #ebdbb2;       /* Gruvbox foreground */
+}
+
+window#waybar {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ────────────── WORKSPACES ────────────── */
+#workspaces{
+  margin-right: 4px;
+}
+#workspaces button {
+    padding: 0 2px;          
+    margin: 0 1px;
+    border-radius: 0;        /* No rounded corners */
+    background: #3c3836;     /* Gruvbox surface */
+    color: #a89984;          /* subtext color */
+    border: none;
+    min-width: 16px;
+    min-height: 0;
+}
+
+#workspaces button.focused {
+    background: #fe8019;     /* Gruvbox orange */
+    color: #282828;          /* base */
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background: #fb4934;     /* Gruvbox red */
+    color: #282828;
+}
+
+#workspaces button:hover {
+    background: #504945;
+}
+
+/* ────────────── SWAY SCRATCHPAD ────────────── */
+#sway-scratchpad {
+    color: #fe8019;          /* Gruvbox orange */
+    padding: 0;
+    margin: 0 6px;
+    background: transparent;
+}
+
+/* ────────────── SWAY MODE ────────────── */
+#sway-mode {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #fe8019;
+    font-weight: bold;
+}
+
+/* ────────────── IDLE INHIBITOR ────────────── */
+#idle_inhibitor {
+    border: none;
+    box-shadow: none;
+    min-height: 0;
+    background: transparent;
+    padding: 2px 4px 0 4px;
+    margin: 0 6px;
+    color: #ebdbb2;
+}
+
+/* ────────────── MODULES ────────────── */
+/* Distinct Gruvbox colors for each module, no backgrounds */
+
+#clock {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #fabd2f;   /* Gruvbox yellow */
+}
+
+#pulseaudio {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #83a598;   /* Gruvbox blue */
+}
+
+#pulseaudio.muted {
+    color: #fb4934;   /* Gruvbox red */
+}
+
+#backlight {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #fe8019;   /* Gruvbox orange */
+}
+
+#network {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #8ec07c;   /* Gruvbox aqua */
+}
+
+#battery {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #98971a;   /* Gruvbox dark green */
+}
+
+#battery.charging {
+    color: #b8bb26;   /* Gruvbox light green */
+}
+
+#cpu {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #fb4934;   /* Gruvbox red */
+}
+
+#memory {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #8ec07c;   /* Gruvbox aqua */
+}
+
+/* ────────────── TRAY ────────────── */
+#tray {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+}
+
+/* ────────────── GENERAL MODULES (hover/tooltip fix) ────────────── */
+.tooltip {
+    background: #282828;       /* Gruvbox base */
+    border: 1px solid #504945;
+    padding: 6px;
+    color: #ebdbb2;
+    font-size: 12px;
+}
+
+#mpris {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #d3869b;   /* Gruvbox purple */
+}
+
+#bluetooth {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #83a598;   /* Gruvbox light blue */
+}
+
+#custom-caffeine {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #ebdbb2;   /* Gruvbox foreground */
+}
+
+#custom-caffeine.activated {
+    color: #fabd2f;   /* Gruvbox yellow */
+}
+
+#custom-cava {
+    color: #fe8019;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: monospace;
+}
+
+#custom-swaync {
+    background: transparent;
+    padding: 0;
+    margin: 0 12px 0 6px;
+    color: #fabd2f;
+}

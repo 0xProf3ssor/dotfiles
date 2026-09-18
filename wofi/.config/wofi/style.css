@@ -1,0 +1,78 @@
+* {
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 14px;
+}
+
+window {
+  background-color: #282828;
+  border: 1px solid #504945; /* Gruvbox Grey for main border */
+}
+
+#input {
+  box-shadow: none;
+  outline: none;
+  margin: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;          /* Sharp corners */
+  background-color: #3c3836; /* Gruvbox Surface */
+  color: #ebdbb2;            /* Gruvbox Foreground */
+  border: 1px solid transparent;
+}
+
+#input:focus {
+  box-shadow: none;
+  outline: none;
+  border: 1px solid #fe8019; /* Gruvbox Orange for active focus */
+}
+
+#inner-box {
+  margin: 0px 12px;
+  padding: 6px;
+  background-color: transparent;
+}
+
+#outer-box {
+  margin: 0;
+  padding: 0;
+}
+
+#scroll {
+  margin: 0;
+  padding: 0;
+}
+
+#entry {
+  padding: 8px 12px;
+  border-radius: 8px;          /* Sharp corners */
+  color: #ebdbb2;
+}
+
+#entry:selected {
+  background-color: #fe8019; /* Gruvbox Orange for selected item */
+  color: #282828;            /* Dark text for contrast */
+}
+
+#text {
+  color: inherit;
+}
+
+#text:selected {
+  color: inherit;
+}
+
+#input image {
+  color: #fe8019; /* Gruvbox Orange for search and backspace icons */
+  -gtk-icon-theme: "Adwaita";
+}
+
+#input image.left {
+  color: #fe8019;
+}
+
+#input image.right {
+  color: #fe8019;
+}
+
+#entry image {
+  margin-right: 10px;
+}

@@ -1,0 +1,36 @@
+window {
+    background: transparent;
+}
+
+#osd {
+    background-color: #282828;
+    border: 1px solid #504945;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: none;
+}
+
+#container {
+    spacing: 16px;
+}
+
+#osd image,
+#osd label {
+    color: #ebdbb2;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+progressbar trough,
+#osd progressbar trough {
+    background-color: #3c3836;
+    border-radius: 8px;
+    min-height: 12px;
+}
+
+progressbar progress,
+#osd progressbar progress {
+    background-color: #fe8019;
+    border-radius: 8px;
+    min-height: 12px;
+}

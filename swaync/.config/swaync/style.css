@@ -1,0 +1,509 @@
+* {
+  all: unset;
+  font-size: 14px;
+  font-family: "JetBrainsMono Nerd Font", "Ubuntu Nerd Font", sans-serif;
+  transition: 200ms;
+}
+
+trough highlight {
+  background: #ebdbb2;
+}
+
+scale {
+  margin: 0 7px;
+}
+
+scale trough {
+    min-width: 50px;
+  margin: 0rem 1rem;
+  min-height: 8px;
+  min-width: 65px;
+  border-radius: 0;
+}
+
+scale trough slider {
+  margin: -10px;
+  border-radius: 0;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+  transition: all 0.2s ease;
+  background-color: #83a598;
+}
+
+trough {
+  background-color: #3c3836;
+}
+
+/* notifications */
+.notification-background {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  margin: 4px 10px;
+  background: #3c3836;  /* Gruvbox surface */
+  color: #ebdbb2;
+  padding: 0;
+  border: none;
+}
+
+.notification-background .notification {
+  padding: 10px;
+  border-radius: 0;
+}
+
+.notification-background .notification.critical {
+  box-shadow: inset 0 0 0 2px #fb4934;
+}
+
+.notification .notification-content {
+  margin: 7px;
+}
+
+.notification .notification-content overlay {
+  margin: 4px;
+}
+
+.notification-content .summary {
+  color: #ebdbb2;
+  font-weight: bold;
+}
+
+.notification-content .time {
+  color: #bdae93;
+  font-size: 0.9em;
+}
+
+.notification-content .body {
+  color: #d5c4a1;
+}
+
+.notification-background .close-button {
+  margin: 7px;
+  padding: 4px;
+  border-radius: 0;
+  color: #ebdbb2;
+  background-color: transparent;
+}
+
+.notification-background .close-button:hover {
+  background-color: #fb4934;
+  color: #282828;
+}
+
+.notification-background .close-button:active {
+  background-color: #cc241d;
+}
+
+.notification .notification-action {
+  border-radius: 0;
+  color: #ebdbb2;
+  background-color: #3c3836;
+  margin: 4px;
+  padding: 8px;
+}
+
+.notification .notification-action:hover {
+  background-color: #665c54;
+}
+
+.notification .notification-action:active {
+  background-color: #7c6f64;
+}
+
+.notification.critical progress {
+  background-color: #fb4934;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: #83a598;
+}
+
+.notification progress,
+.notification trough,
+.notification progressbar {
+  border-radius: 0;
+  padding: 3px 0;
+}
+
+/* control center */
+.control-center {
+  box-shadow: none;
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  color: #ebdbb2;
+  padding: 14px;
+}
+
+.control-center .notification-background {
+  border-radius: 0;
+  margin: 6px 10px;
+}
+
+.control-center .notification-background .notification {
+  border-radius: 0;
+}
+
+.control-center .widget-title > label {
+  color: #fabd2f;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.control-center .widget-title button {
+  border-radius: 0;
+  color: #ebdbb2;
+  background-color: transparent;
+  padding: 8px;
+}
+
+.control-center .widget-title button:hover {
+  background-color: #3c3836;
+}
+
+.control-center .notification-group {
+  margin-top: 10px;
+}
+
+
+/* dnd */
+.widget-dnd {
+  margin-top: 5px;
+  border-radius: 0;
+  font-size: 1.1rem;
+}
+
+
+
+
+/* mpris */
+.widget-mpris-player {
+  background: #3c3836;
+  border-radius: 0;
+  border: none;
+  color: #ebdbb2;
+}
+
+.mpris-overlay {
+  background-color: #3c3836;
+  opacity: 0.9;
+  padding: 15px 10px;
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.widget-mpris button {
+  color: #ebdbb2;
+}
+.widget-mpris button:hover {
+  background-color: #3c3836;
+}
+
+.power-buttons button:hover,
+.powermode-buttons button:hover,
+.screenshot-buttons button:hover {
+  background: #504945;
+}
+
+.widget-volume label {
+  color: #83a598;
+  font-size: 20px;
+}
+.widget-volume trough highlight {
+  background: #83a598;
+}
+
+.widget-backlight label {
+  color: #fabd2f;
+  font-size: 20px;
+}
+.widget-backlight trough highlight {
+  background: #fabd2f;
+}
+
+
+/* =========================================
+   ANTIGRAVITY UNIFIED OVERRIDES 
+   ========================================= */
+
+/* 1. Control Center Sharp Edges & Border */
+window, window#control-center, .control-center, .blank-window, .floating-notifications {
+    border-radius: 0px;
+}
+.control-center {
+    border: none;
+}
+
+/* 2. Sliders (Volume & Brightness) */
+.widget-volume, .widget-backlight {
+    background-color: #3c3836;
+    padding: 5px 10px;
+    margin: 4px 10px;
+    border-radius: 0px;
+}
+Ppx;
+}
+Ppx;
+}
+scale trough {
+    min-width: 50px;
+    background-color: #282828;
+    border-radius: 0px;
+    min-height: 12px;
+}
+.widget-volume scale trough highlight {
+    background-color: #83a598;
+    border-radius: 0px;
+}
+.widget-backlight scale trough highlight {
+    background-color: #fabd2f;
+    border-radius: 0px;
+}
+scale trough slider {
+    background-color: #ebdbb2;
+    border-radius: 50%;
+    min-width: 16px;
+    min-height: 16px;
+    box-shadow: none;
+}
+/* No hover color on sliders */
+scale trough slider:hover {
+    background-color: #ebdbb2;
+}
+
+/* 3. MPRIS Media Player */
+.widget-mpris {
+    background-color: #3c3836;
+    padding: 0px;
+    margin: 4px 10px;
+    border-radius: 0px;
+}
+.widget-mpris-player {
+    padding: 0px;
+}
+.widget-mpris-title {
+    font-weight: bold;
+    color: #ebdbb2;
+}
+.widget-mpris-subtitle {
+    color: #a89984;
+}
+
+/* 4. DND Toggle */
+.widget-dnd {
+    background-color: #3c3836;
+    padding: 10px;
+    margin: 4px 10px;
+    border-radius: 0px;
+    color: #ebdbb2;
+}
+
+
+
+
+
+
+
+
+
+
+/* 6. Scrollbar Eradication */
+scrollbar, scrollbar trough, scrollbar slider, scrollbar * {
+    background-color: transparent;
+    background: transparent;
+    min-width: 0px;
+    min-height: 0px;
+    margin: 0px;
+    padding: 0px;
+    opacity: 0;
+}
+
+
+/* 5. Quick Actions Grid */
+.widget-buttons-grid {
+    background-color: #3c3836;
+    padding: 8px;
+    margin: 4px 10px;
+    border-radius: 0px;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background-color: #3c3836;
+  color: #ebdbb2;
+  border-radius: 0px;
+  margin: 4px;
+  padding: 15px 20px 15px 10px;
+  min-width: 65px;
+  border: none;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background-color: #fe8019;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button label {
+  font-size: 24px;
+    font-family: "Font Awesome 6 Free", "FontAwesome";
+}
+
+
+
+
+
+
+
+.widget-dnd > switch {
+  margin-right: 110px;
+  border-radius: 0px;
+  background: #504945;
+}
+
+.widget-dnd > switch:checked {
+  background: #fe8019;
+}
+
+.widget-dnd > switch slider {
+  background: #ebdbb2;
+  border-radius: 0px;
+}
+
+/* Floating Notifications Border */
+.floating-notifications .notification-background {
+    background-color: #282828;
+    border: 1px solid #504945;
+    border-radius: 0px;
+    margin: 8px; /* Adds gap between multiple floating notifications */
+}
+
+/* Force Notification Alignment and Compact Gaps */
+.control-center .notification-row {
+    outline: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.control-center .notification-background {
+    margin: 2px 10px;
+    border-radius: 0px;
+}
+
+.control-center .notification-group {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* MERGE DND AND TITLE INTO ONE ROW */
+
+
+
+
+
+.control-center .widget-title button {
+    padding: 5px 10px;
+}
+
+/* Force absolutely minimum gaps between notification blocks */
+.notification-group, 
+.notification-row, 
+.notification-background,
+.control-center .notification-group,
+.control-center .notification-row,
+.control-center .notification-background {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+/* Extreme Compaction of Notification Boxes */
+.notification-background .notification {
+    padding: 8px 10px;
+}
+
+.notification .notification-content {
+    margin: 2px 0px;
+}
+
+/* 0px margins on wrappers, exact 2px bottom gap on the background */
+.notification-group, 
+.notification-row, 
+.control-center .notification-group,
+.control-center .notification-row {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.control-center .notification-background {
+    margin-top: 0px;
+    margin-bottom: 6px;
+}
+
+
+/* Active State for Toggle Buttons */
+.widget-buttons-grid > flowbox > flowboxchild > button:checked,
+.widget-buttons-grid > flowbox > flowboxchild > button.active {
+    background-color: #fe8019;
+}
+
+/* SIDE-BY-SIDE SLIDERS */
+.widget-volume {
+    margin-right: 230px;
+}
+.widget-backlight {
+    margin-left: 230px;
+    margin-top: -42px; 
+    margin-bottom: 4px;
+}
+
+/* Force GTK Sliders to Shrink */
+scale trough {
+    min-width: 50px;
+}
+
+/* Force High Specificity Border Radius on Trough */
+.widget-volume scale trough,
+.widget-backlight scale trough {
+    border-radius: 0px;
+    margin-right: 0px;
+}
+
+/* --- USER DESIGN OVERRIDES: FLOATING CARDS --- */
+.control-center .notification-background {
+    background-color: #282828; 
+    border-radius: 0px;        
+    border: 1px solid #504945; 
+    margin-bottom: 10px;       
+    margin-top: 0px;
+}
+
+.control-center .notification-background .notification {
+    border-radius: 0px; 
+}
+
+.control-center .widget-title {
+    background-color: #282828;
+    border-radius: 0px;
+    border: 1px solid #504945;
+    margin: 10px 10px 14px 10px;
+    padding: 6px 12px;
+}
+
+/* Apply the exact same Card style to the top widgets */
+.widget-buttons-grid, 
+.widget-volume, 
+.widget-backlight, 
+.widget-mpris {
+    background-color: #282828;
+    border-radius: 0px;
+    border: 1px solid #504945;
+}
+
+/* Fix MPRIS inner styling so it doesn't have a square background */
+.widget-mpris-player {
+    background-color: transparent;
+    border-radius: 0px;
+}
+.mpris-overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+}
