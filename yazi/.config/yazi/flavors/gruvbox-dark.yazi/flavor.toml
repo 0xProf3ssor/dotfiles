@@ -1,0 +1,36 @@
+[manager]
+cwd = { fg = "#83a598", italic = true }
+hovered = { bg = "#504945", bold = true }
+preview_hovered = { bg = "#504945", bold = true }
+find_keyword = { fg = "#fabd2f", italic = true }
+find_position = { fg = "#b8bb26", bg = "reset", italic = true }
+marker_selected = { fg = "#b8bb26", bg = "#b8bb26" }
+marker_copied = { fg = "#fabd2f", bg = "#fabd2f" }
+marker_cut = { fg = "#fb4934", bg = "#fb4934" }
+tab_active = { fg = "#282828", bg = "#a89984" }
+tab_inactive = { fg = "#a89984", bg = "#3c3836" }
+border_symbol = "│"
+border_style = { fg = "#665c54" }
+
+[mode]
+normal_main = { fg = "#282828", bg = "#a89984", bold = true }
+normal_alt = { fg = "#a89984", bg = "#3c3836" }
+select_main = { fg = "#282828", bg = "#b8bb26", bold = true }
+select_alt = { fg = "#b8bb26", bg = "#3c3836" }
+unset_main = { fg = "#282828", bg = "#d3869b", bold = true }
+unset_alt = { fg = "#d3869b", bg = "#3c3836" }
+
+[filetype]
+rules = [
+	{ mime = "image/*", fg = "#8ec07c" },
+	{ mime = "video/*", fg = "#fabd2f" },
+	{ mime = "audio/*", fg = "#fabd2f" },
+	{ mime = "application/zip", fg = "#fb4934" },
+	{ mime = "application/gzip", fg = "#fb4934" },
+	{ mime = "application/x-tar", fg = "#fb4934" },
+	{ mime = "application/x-bzip", fg = "#fb4934" },
+	{ mime = "application/x-bzip2", fg = "#fb4934" },
+	{ mime = "application/x-7z-compressed", fg = "#fb4934" },
+	{ mime = "application/x-rar", fg = "#fb4934" },
+	{ name = "*", is = "exec", fg = "#b8bb26" },
+]
