@@ -1,0 +1,6 @@
+#!/bin/bash
+if pgrep -x "wlogout" > /dev/null; then
+    pkill -x "wlogout"
+else
+    wlogout -b 3 -c 20 -r 20 -L 288 -R 288 -T 124 -B 124
+fi

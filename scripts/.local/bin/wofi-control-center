@@ -1,0 +1,94 @@
+#!/bin/bash
+
+WOFI_CMD="wofi --dmenu --conf /home/prof3ssor/.config/wofi/config --style /home/prof3ssor/.config/wofi/style.css"
+
+# Categories
+CAT_CONN="  Connectivity 󰅂"
+CAT_AUDIO="  Audio & Media 󰅂"
+CAT_DISP="  Appearance 󰅂"
+CAT_CAPT="  Capture & Screen 󰅂"
+CAT_CLIP="󰅍  Clipboard History 󰅂"
+CAT_POW="  Session & Power 󰅂"
+CAT_SYS="  System Tools 󰅂"
+CAT_NOT="  Notifications 󰅂"
+
+I_BACK=" Back"
+
+handle_action() {
+    case "$1" in
+        "  Wi-Fi") exec ~/.local/bin/networkmanager_dmenu ;;
+        " Bluetooth") exec ~/.local/bin/wofi-bluetooth ;;
+        
+        "  Volume Mixer") exec foot -a pulsemixer -W 100x30 -e pulsemixer ;;
+        "  Play/Pause") exec playerctl play-pause ;;
+        "󰒭  Next Track") exec playerctl next ;;
+        "󰒮  Previous Track") exec playerctl previous ;;
+        
+        "  Switch Wallpaper") 
+            WP_DIR="/usr/share/backgrounds"
+            # Build list with img: syntax
+            FORMATTED_LIST=""
+            while IFS= read -r file; do
+                filename=$(basename "$file")
+                FORMATTED_LIST+="img:$file:text:$filename\n"
+            done < <(find "$WP_DIR" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \))
+            
+            RAW_CHOICE=$(echo -e "$FORMATTED_LIST" | $WOFI_CMD -p "Wallpaper" --allow-images)
+            if [ -n "$RAW_CHOICE" ] && [ "$RAW_CHOICE" != "$I_BACK" ]; then
+                CLEAN_NAME=$(echo "$RAW_CHOICE" | sed 's/.*text://')
+                FULL_PATH=$(find "$WP_DIR" -type f -name "$CLEAN_NAME" | head -n 1)
+                if [ -n "$FULL_PATH" ]; then
+                    swaymsg output "*" bg "$FULL_PATH" fill
+                    sed -i "s|output \* bg .*|output * bg $FULL_PATH fill|" ~/dotfiles/arch/sway/.config/sway/config
+                fi
+            fi
+            ;;
+            
+        "  Screenshot Full Screen") grim - | wl-copy && notify-send "Screenshot copied to clipboard" ;;
+        "  Screenshot Select Area") slurp | grim -g - - | wl-copy && notify-send "Area screenshot copied" ;;
+        
+        " Lock Screen") exec ~/.local/bin/lock ;;
+        "󰤄 Suspend") systemctl suspend ;;
+        "󰍃 Logout") swaymsg exit ;;
+        " Reboot") systemctl reboot ;;
+        " Shutdown") systemctl poweroff ;;
+        
+        "  Task Manager (btop)") exec foot -a btop -W 120x35 -e btop ;;
+        " Reload Sway Config") swaymsg reload ;;
+        "  Weather Forecast") exec foot -a weather -W 135x19 -e bash -c 'curl -s "wttr.in/?1"; echo ""; read -p "Press Enter to close..."' ;;
+        
+        " Open Notification Center") exec swaync-client -t -sw ;;
+        "󰂛 Toggle Do Not Disturb") exec swaync-client -d -sw ;;
+        " Clear All Notifications") exec swaync-client -C ;;
+        *) exit 0 ;;
+    esac
+}
+
+main_menu() {
+    CHOICE=$(echo -e "$CAT_CONN\n$CAT_AUDIO\n$CAT_DISP\n$CAT_CAPT\n$CAT_CLIP\n$CAT_NOT\n$CAT_SYS\n$CAT_POW" | $WOFI_CMD -p "Control Center")
+
+    case "$CHOICE" in
+        "$CAT_CONN") submenu "Connectivity" "  Wi-Fi\n Bluetooth\n$I_BACK" ;;
+        "$CAT_AUDIO") submenu "Audio" "  Volume Mixer\n  Play/Pause\n󰒭  Next Track\n󰒮  Previous Track\n$I_BACK" ;;
+        "$CAT_DISP") submenu "Appearance" "  Switch Wallpaper\n$I_BACK" ;;
+        "$CAT_CAPT") submenu "Capture" "  Screenshot Full Screen\n  Screenshot Select Area\n$I_BACK" ;;
+        "$CAT_CLIP") 
+            exec foot -a clipse -W 100x30 -e ~/.local/bin/clipse
+            ;;
+        "$CAT_NOT") submenu "Notifications" " Open Notification Center\n󰂛 Toggle Do Not Disturb\n Clear All Notifications\n$I_BACK" ;;
+        "$CAT_SYS") submenu "System" "  Weather Forecast\n  Task Manager (btop)\n Reload Sway Config\n$I_BACK" ;;
+        "$CAT_POW") submenu "Power" " Lock Screen\n󰤄 Suspend\n󰍃 Logout\n Reboot\n Shutdown\n$I_BACK" ;;
+        *) exit 0 ;;
+    esac
+}
+
+submenu() {
+    CHOICE=$(echo -e "$2" | $WOFI_CMD -p "$1")
+    if [ $? -eq 1 ] || [ "$CHOICE" = "$I_BACK" ]; then 
+        main_menu
+    else 
+        handle_action "$CHOICE"
+    fi
+}
+
+main_menu

@@ -1,0 +1,3 @@
+#!/bin/bash
+export NEWT_COLORS='root=white,black;border=white,black;window=white,black;shadow=black,black;title=yellow,black;button=white,black;actbutton=black,yellow;checkbox=white,black;actcheckbox=black,yellow;entry=white,black;label=white,black;listbox=white,black;actlistbox=black,yellow;textbox=white,black;acttextbox=black,yellow;helpline=white,black;roottext=white,black;emptyscale=white,black;fullscale=black,yellow;disentry=white,black'
+exec /usr/bin/nmtui "$@"
