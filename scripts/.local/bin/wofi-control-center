@@ -19,7 +19,7 @@ handle_action() {
         "  Wi-Fi") exec ~/.local/bin/networkmanager_dmenu ;;
         " Bluetooth") exec ~/.local/bin/wofi-bluetooth ;;
         
-        "  Volume Mixer") exec kitty --class pulsemixer pulsemixer ;;
+        "  Volume Mixer") exec kitty --class pulsemixer -o remember_window_size=no -o initial_window_width=100c -o initial_window_height=30c pulsemixer ;;
         "  Play/Pause") exec playerctl play-pause ;;
         "󰒭  Next Track") exec playerctl next ;;
         "󰒮  Previous Track") exec playerctl previous ;;
@@ -53,9 +53,9 @@ handle_action() {
         " Reboot") systemctl reboot ;;
         " Shutdown") systemctl poweroff ;;
         
-        "  Task Manager (btop)") exec kitty --class btop btop ;;
+        "  Task Manager (btop)") exec kitty --class btop -o remember_window_size=no -o initial_window_width=120c -o initial_window_height=35c btop ;;
         " Reload Sway Config") swaymsg reload ;;
-        "  Weather Forecast") exec kitty --class weather bash -c 'curl -s "wttr.in/?1"; echo ""; read -p "Press Enter to close..."' ;;
+        "  Weather Forecast") exec kitty --class weather -o remember_window_size=no -o initial_window_width=135c -o initial_window_height=19c bash -c 'curl -s "wttr.in/?1"; echo ""; read -p "Press Enter to close..."' ;;
         
         " Open Notification Center") exec swaync-client -t -sw ;;
         "󰂛 Toggle Do Not Disturb") exec swaync-client -d -sw ;;
@@ -73,7 +73,7 @@ main_menu() {
         "$CAT_DISP") submenu "Appearance" "  Switch Wallpaper\n$I_BACK" ;;
         "$CAT_CAPT") submenu "Capture" "  Screenshot Full Screen\n  Screenshot Select Area\n$I_BACK" ;;
         "$CAT_CLIP") 
-            exec kitty --class clipse ~/.local/bin/clipse
+            exec kitty --class clipse -o remember_window_size=no -o initial_window_width=100c -o initial_window_height=30c ~/.local/bin/clipse
             ;;
         "$CAT_NOT") submenu "Notifications" " Open Notification Center\n󰂛 Toggle Do Not Disturb\n Clear All Notifications\n$I_BACK" ;;
         "$CAT_SYS") submenu "System" "  Weather Forecast\n  Task Manager (btop)\n Reload Sway Config\n$I_BACK" ;;
