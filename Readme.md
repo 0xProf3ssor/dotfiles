@@ -63,3 +63,5 @@ stow swaync waybar wofi
 
 *Note: Stow creates symlinks from this repository to your `~/.config/` directory. If you already have a physical file in `~/.config/` for a specific app, Stow will warn you. You must delete the existing folder/file before Stowing.*
 
+### 📜 Custom Scripts
+This repository includes a `scripts/` package which automatically populates your `~/.local/bin/` folder with all the custom shell scripts required for this rice to function properly (e.g. `wlogout-toggle`, `wofi-bluetooth`, `waybar-cava.py`). Make sure `~/.local/bin` is in your `$PATH`!
