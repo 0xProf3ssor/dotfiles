@@ -1,6 +1,6 @@
 # 0xProf3ssor's Dotfiles
 
-A highly customized, terminal-focused development environment featuring a cohesive "Floating Glass" **Gruvbox Material Dark** theme across all applications. This configuration provides a beautiful, productive Wayland workspace.
+A highly customized, terminal-focused development environment featuring a cohesive "Floating Card" **Gruvbox Material Dark** theme across all applications. This configuration provides a beautiful, productive Wayland workspace.
 
 ## 📸 Screenshots
 
