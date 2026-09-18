@@ -141,6 +141,8 @@ input type:touchpad {
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    # File Manager (Thunar)
+    bindsym $mod+Shift+f exec thunar
 
     # Kill focused window
     bindsym $mod+Shift+q kill
