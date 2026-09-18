@@ -19,7 +19,7 @@ handle_action() {
         "  Wi-Fi") exec ~/.local/bin/networkmanager_dmenu ;;
         " Bluetooth") exec ~/.local/bin/wofi-bluetooth ;;
         
-        "  Volume Mixer") exec foot -a pulsemixer -W 100x30 -e pulsemixer ;;
+        "  Volume Mixer") exec kitty --class pulsemixer pulsemixer ;;
         "  Play/Pause") exec playerctl play-pause ;;
         "󰒭  Next Track") exec playerctl next ;;
         "󰒮  Previous Track") exec playerctl previous ;;
@@ -53,9 +53,9 @@ handle_action() {
         " Reboot") systemctl reboot ;;
         " Shutdown") systemctl poweroff ;;
         
-        "  Task Manager (btop)") exec foot -a btop -W 120x35 -e btop ;;
+        "  Task Manager (btop)") exec kitty --class btop btop ;;
         " Reload Sway Config") swaymsg reload ;;
-        "  Weather Forecast") exec foot -a weather -W 135x19 -e bash -c 'curl -s "wttr.in/?1"; echo ""; read -p "Press Enter to close..."' ;;
+        "  Weather Forecast") exec kitty --class weather bash -c 'curl -s "wttr.in/?1"; echo ""; read -p "Press Enter to close..."' ;;
         
         " Open Notification Center") exec swaync-client -t -sw ;;
         "󰂛 Toggle Do Not Disturb") exec swaync-client -d -sw ;;
@@ -73,7 +73,7 @@ main_menu() {
         "$CAT_DISP") submenu "Appearance" "  Switch Wallpaper\n$I_BACK" ;;
         "$CAT_CAPT") submenu "Capture" "  Screenshot Full Screen\n  Screenshot Select Area\n$I_BACK" ;;
         "$CAT_CLIP") 
-            exec foot -a clipse -W 100x30 -e ~/.local/bin/clipse
+            exec kitty --class clipse ~/.local/bin/clipse
             ;;
         "$CAT_NOT") submenu "Notifications" " Open Notification Center\n󰂛 Toggle Do Not Disturb\n Clear All Notifications\n$I_BACK" ;;
         "$CAT_SYS") submenu "System" "  Weather Forecast\n  Task Manager (btop)\n Reload Sway Config\n$I_BACK" ;;
