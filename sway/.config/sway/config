@@ -84,15 +84,15 @@ exec_always killall swayosd-server; swayosd-server --style ~/.config/swayosd/sty
 exec --no-startup-id udiskie -a -s
 
 # Open Network Manager TUI
-bindsym $mod+Ctrl+n exec $term --class nmtui ~/.local/bin/nmtui
+bindsym $mod+Ctrl+n exec $term --class nmtui -o remember_window_size=no -o initial_window_width=80c -o initial_window_height=24c ~/.local/bin/nmtui
 for_window [app_id="nmtui"] floating enable, move position center
 
 # Open pulsemixer audio device manager
-bindsym $mod+Ctrl+p exec $term --class pulsemixer pulsemixer
+bindsym $mod+Ctrl+p exec $term --class pulsemixer -o remember_window_size=no -o initial_window_width=100c -o initial_window_height=30c pulsemixer
 for_window [app_id="pulsemixer"] floating enable, move position center
 
 # Bluetui floating TUI for bluetooth management
-bindsym $mod+Ctrl+b exec $term --class bluetui bluetui
+bindsym $mod+Ctrl+b exec $term --class bluetui -o remember_window_size=no -o initial_window_width=100c -o initial_window_height=30c bluetui
 for_window [app_id="bluetui"] floating enable, move position center
 
 # Sink volume toggle mute
