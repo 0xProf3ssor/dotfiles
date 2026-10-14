@@ -8,10 +8,10 @@
     "sway/window"
   ],
   "modules-center": [
-    "clock",
-    "custom/cava"
+    "clock"
   ],
   "modules-right": [
+    "custom/cava",
     "idle_inhibitor",
     "pulseaudio",
     "backlight",
@@ -105,6 +105,12 @@
     "exec": "~/.local/bin/waybar-cava.py",
     "return-type": "json",
     "format": "{}",
+    "tooltip": false
+  },
+  "custom/cpu": {
+    "exec": "/usr/local/bin/lxmon -s -c waybar -d cpu -j",
+    "return-type": "json",
+    "format": " {percentage}%",
     "tooltip": false
   },
   "idle_inhibitor": {

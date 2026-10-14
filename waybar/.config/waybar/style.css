@@ -126,6 +126,12 @@ window#waybar {
     color: #fb4934;   /* Gruvbox red */
 }
 
+#custom-cpu {
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
+    color: #fb4934;   /* Gruvbox red */
+}
 #memory {
     background: transparent;
     padding: 0;
