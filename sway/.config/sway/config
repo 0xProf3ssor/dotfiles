@@ -367,6 +367,10 @@ exec_always ~/.local/bin/clipse -listen
 for_window [app_id="pulsemixer"] floating enable, move position center
 for_window [app_id="clipse"] floating enable, move position center
 for_window [app_id="weather"] floating enable, move position center
+
+# Zen / Firefox Picture-in-Picture (Play in popup)
+for_window [app_id="(?i)(?:zen|firefox).*" title="(?i)picture.*in.*picture"] floating enable, sticky enable
+
 font pango:Inter 11
 bindsym $mod+Ctrl+c exec ~/.local/bin/caffeine
 for_window [app_id="caffeine-inhibit"] move scratchpad, inhibit_idle open
