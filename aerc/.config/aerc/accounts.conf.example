@@ -1,0 +1,10 @@
+# Example aerc accounts configuration
+# Rename this file to accounts.conf and fill in your details.
+# Note: accounts.conf is gitignored to protect your credentials.
+
+[Personal]
+source        = imaps://user%40gmail.com:password@imap.gmail.com:993
+outgoing      = smtps://user%40gmail.com:password@smtp.gmail.com:465
+default       = INBOX
+from          = Your Name <user@gmail.com>
+copy-to       = [Gmail]/Sent Mail

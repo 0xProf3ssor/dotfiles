@@ -1,0 +1,88 @@
+# Gruvbox Material Dark styleset for aerc
+
+*.default=true
+*.normal=true
+
+default.fg=#ebdbb2
+default.bg=#282828
+
+error.fg=#ea6962
+error.bold=true
+warning.fg=#fabd2f
+success.fg=#a9b665
+
+# Tab bar
+tab.fg=#928374
+tab.bg=#282828
+tab.selected.fg=#ebdbb2
+tab.selected.bg=#3c3836
+tab.selected.bold=true
+
+# Borders & Separators
+border.fg=#504945
+border.bold=true
+
+# Message List
+msglist_unread.bold=true
+msglist_unread.fg=#ebdbb2
+msglist_flagged.fg=#fabd2f
+msglist_flagged.bold=true
+msglist_result.fg=#fe8019
+msglist_result.bold=true
+msglist_deleted.fg=#928374
+msglist_deleted.dim=true
+msglist_marked.fg=#8ec07c
+msglist_*.selected.bold=true
+msglist_*.selected.bg=#3c3836
+msglist_*.selected.fg=#ebdbb2
+
+# Directory List (Sidebar / Mailboxes)
+dirlist_*.selected.bold=true
+dirlist_*.selected.bg=#3c3836
+dirlist_*.selected.fg=#ebdbb2
+dirlist_unread.bold=true
+dirlist_unread.fg=#fabd2f
+
+# Statusline
+statusline_default.fg=#a89984
+statusline_default.bg=#3c3836
+statusline_error.fg=#ea6962
+statusline_error.bg=#3c3836
+statusline_error.bold=true
+statusline_success.fg=#a9b665
+statusline_success.bg=#3c3836
+statusline_success.bold=true
+
+# Completion popups
+completion_default.selected.bg=#3c3836
+completion_default.selected.fg=#fe8019
+completion_default.selected.bold=true
+
+# Part viewer / switcher
+part_filename.selected.fg=#ebdbb2
+part_filename.selected.bg=#3c3836
+part_switcher.selected.bg=#3c3836
+part_mimetype.selected.fg=#ebdbb2
+part_mimetype.selected.bg=#3c3836
+
+selector_focused.bg=#3c3836
+
+[viewer]
+url.fg=#83a598
+url.underline=true
+header.fg=#fe8019
+header.bold=true
+signature.fg=#928374
+signature.dim=true
+diff_meta.bold=true
+diff_meta.fg=#ebdbb2
+diff_chunk.fg=#83a598
+diff_chunk_func.fg=#83a598
+diff_chunk_func.bold=true
+diff_add.fg=#a9b665
+diff_del.fg=#ea6962
+diff_whitespace.bg=#ea6962
+quote_*.fg=#928374
+quote_1.fg=#a89984
+quote_2.fg=#7daea3
+quote_3.fg=#d3869b
