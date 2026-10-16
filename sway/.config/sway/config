@@ -45,7 +45,7 @@ set $term kitty
 set $menu wofi --conf /home/prof3ssor/.config/wofi/config --style /home/prof3ssor/.config/wofi/style.css
 
 # Web browser
-set $browser brave
+set $browser zen
 
 ### Output configuration
 #
