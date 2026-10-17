@@ -8,3 +8,4 @@ outgoing      = smtps://user%40gmail.com:password@smtp.gmail.com:465
 default       = INBOX
 from          = Your Name <user@gmail.com>
 copy-to       = [Gmail]/Sent Mail
+check-mail    = 1m
